@@ -1,0 +1,44 @@
+/* =============================================================================
+   RESPONSIVE — Media queries
+   Todos los breakpoints en un lugar. Modificar layout adaptativo aquí.
+   Breakpoints: 900px (tablet/mobile nav) · 600px (mobile pequeño)
+   ============================================================================= */
+
+
+/* =============================================================================
+   TABLET / MOBILE — max-width: 900px
+   ============================================================================= */
+
+@media (max-width: 900px) {
+
+  /* Navbar */
+  .nav-links  { display: none; }
+  .hamburger  { display: flex; }
+
+  /* Contacto */
+  .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* Formulario */
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  /* Proceso — ocultar línea conectora */
+  .process-steps::before { display: none; }
+}
+
+
+/* =============================================================================
+   MOBILE — max-width: 600px
+   ============================================================================= */
+
+@media (max-width: 600px) {
+
+  /* Hero */
+  .hero-stats { gap: 1.5rem; }
+
+  /* Footer */
+  .footer-grid   { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}

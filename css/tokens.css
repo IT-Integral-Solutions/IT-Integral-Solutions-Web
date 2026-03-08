@@ -1,0 +1,21 @@
+/* =============================================================================
+   TOKENS — Design Variables
+   Fuente única de verdad para colores, tipografías y valores de diseño.
+   Modificar aquí afecta todo el sistema visual de forma consistente.
+   ============================================================================= */
+
+:root {
+  /* Colores base */
+  --navy:     #0a0f1e;
+  --deep:     #0d1628;
+  --blue:     #1a73e8;
+  --cyan:     #00d4ff;
+  --accent:   #0052cc;
+  --glow:     #00aaff;
+  --white:    #f0f6ff;
+  --muted:    #8ba0c0;
+
+  /* Superficies y bordes */
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --border:  rgba(0, 212, 255, 0.15);
+}
