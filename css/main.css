@@ -809,6 +809,17 @@ section { position: relative; z-index: 1; }
   animation: slide 20s linear infinite;
 }
 
+/* Grid estático para logos de partners */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .partner-item {
   display: flex;
   align-items: center;
