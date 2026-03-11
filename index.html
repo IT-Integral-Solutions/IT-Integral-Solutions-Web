@@ -33,19 +33,15 @@
     "logo": "https://www.itintegraltech.com/asset/img/logo-horizontal-transparent-it.png",
     "description": "Desarrollo de software a medida, aplicaciones móviles y plataformas digitales para empresas.",
     "areaServed": "Worldwide",
-    "availableLanguage": ["Spanish", "English"],
+    "availableLanguage": ["Spanish"],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "email": "it.integral.solution@gmail.com",
-      "availableLanguage": ["Spanish", "English"]
-    },
-    "sameAs": ["https://www.itintegraltech.com"]
+      "availableLanguage": ["Spanish"]
+    }
   }
   </script>
-
-  <!-- Google Analytics 4 — reemplazar GA_MEASUREMENT_ID con el ID real -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,7 +68,7 @@
   <!-- NAVBAR -->
   <nav id="navbar">
     <a href="#inicio" class="nav-logo">
-      <img src="asset/img/logo-horizontal-transparent-it.png" alt="IT-Integral Solutions" style="height:38px;width:auto;" />
+      <img src="asset/img/logo-horizontal-transparent-it.png" alt="IT-Integral Solutions" class="site-logo site-logo--nav" />
     </a>
 
     <ul class="nav-links">
@@ -83,7 +79,7 @@
       <li><a href="#contacto">Contacto</a></li>
     </ul>
 
-    <a href="#contacto" class="nav-cta" onclick="window.ITANALYTICS.trackConversion('nav-cta-click')"><span>Iniciar Proyecto</span></a>
+    <a href="#contacto" class="nav-cta"><span>Iniciar Proyecto</span></a>
 
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -100,14 +96,12 @@
     <a href="#contacto" onclick="closeMobile()">Contacto</a>
   </div>
 
-  <!-- ===========================
-       HERO
-  =========================== -->
+  <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="particles" id="particles"></div>
 
     <div class="hero-content">
-      <div class="hero-badge">💡 Software a medida para empresas que quieren crecer</div>
+      <div class="hero-badge">Software a medida para empresas que quieren crecer</div>
 
       <h1 class="hero-title">
         <span class="line1">Software y plataformas</span>
@@ -121,8 +115,8 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="#contacto" class="btn-primary" onclick="window.ITANALYTICS.trackConversion('hero-cta-contacto')">Contanos tu proyecto</a>
-        <a href="#proceso" class="btn-outline" onclick="window.ITANALYTICS.trackConversion('hero-cta-proceso')">Ver cómo trabajamos</a>
+        <a href="#contacto" class="btn-primary">Contanos tu proyecto</a>
+        <a href="#proceso" class="btn-outline">Ver cómo trabajamos</a>
       </div>
 
       <div class="hero-stats">
@@ -151,9 +145,7 @@
     </div>
   </section>
 
-  <!-- ===========================
-       PROBLEMS (nuevo)
-  =========================== -->
+  <!-- PROBLEMS -->
   <section id="problemas">
     <div class="section-header reveal">
       <div class="section-tag">¿Te suena familiar?</div>
@@ -179,6 +171,7 @@
         <div class="problem-title">Demasiadas planillas de Excel</div>
         <div class="problem-desc">Controlás tu negocio con archivos compartidos, versiones duplicadas y datos que se pierden. Necesitás un sistema real.</div>
       </div>
+
       <div class="problem-card reveal reveal-delay-2">
         <svg class="problem-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="2" y="14" width="14" height="10" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
@@ -195,6 +188,7 @@
         <div class="problem-title">Sistemas que no se integran</div>
         <div class="problem-desc">Usás varias herramientas distintas y tenés que pasar datos a mano entre ellas. Perdés horas y cometés errores.</div>
       </div>
+
       <div class="problem-card reveal reveal-delay-3">
         <svg class="problem-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="22" cy="22" r="14" stroke="#00d4ff" stroke-width="1.5"/>
@@ -209,6 +203,7 @@
         <div class="problem-title">Procesos manuales que consumen tiempo</div>
         <div class="problem-desc">Tareas repetitivas que podrían ser automáticas le roban horas a tu equipo cada semana.</div>
       </div>
+
       <div class="problem-card reveal reveal-delay-1">
         <svg class="problem-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="4" y="8" width="36" height="24" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
@@ -224,6 +219,7 @@
         <div class="problem-title">Sin visibilidad en tiempo real</div>
         <div class="problem-desc">No sabés exactamente qué pasa en tu operación hasta que es tarde. Te falta un dashboard con datos actualizados.</div>
       </div>
+
       <div class="problem-card reveal reveal-delay-2">
         <svg class="problem-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="4" y="8" width="36" height="26" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
@@ -241,6 +237,7 @@
         <div class="problem-title">Presencia digital que no convierte</div>
         <div class="problem-desc">Tu sitio web no refleja la calidad de tu servicio, no aparece en Google o no genera clientes nuevos.</div>
       </div>
+
       <div class="problem-card reveal reveal-delay-3">
         <svg class="problem-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="4" y="4" width="16" height="16" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
@@ -260,13 +257,11 @@
 
     <div class="problems-solution reveal">
       <p>Trabajamos con empresas que necesitan sistemas que funcionen de verdad — sin depender de planillas, procesos manuales o soluciones genéricas que no escalan.</p>
-      <a href="#contacto" class="btn-primary" onclick="window.ITANALYTICS.trackConversion('problems-cta')">Quiero una solución a medida</a>
+      <a href="#contacto" class="btn-primary" id="problemsCta">Quiero una solución a medida</a>
     </div>
   </section>
 
-  <!-- ===========================
-       SERVICES
-  =========================== -->
+  <!-- SERVICES -->
   <section id="servicios">
     <div class="section-header reveal">
       <div class="section-tag">Qué hacemos</div>
@@ -419,9 +414,7 @@
     </div>
   </section>
 
-  <!-- ===========================
-       PROCESS
-  =========================== -->
+  <!-- PROCESS -->
   <section id="proceso">
     <div class="section-header reveal">
       <div class="section-tag">Cómo trabajamos</div>
@@ -437,6 +430,7 @@
           <div class="step-desc">Una llamada de 30 minutos sin costo. Analizamos tu operación, el problema a resolver y qué solución tiene más sentido para tu caso. Sin compromiso.</div>
         </div>
       </div>
+
       <div class="process-step reveal reveal-delay-1">
         <div class="step-num">02</div>
         <div class="step-content">
@@ -444,6 +438,7 @@
           <div class="step-desc">Arquitectura, wireframes y plan de desarrollo acordado con vos. Sabés exactamente qué vas a recibir, cuándo y a qué costo antes de empezar.</div>
         </div>
       </div>
+
       <div class="process-step reveal reveal-delay-2">
         <div class="step-num">03</div>
         <div class="step-content">
@@ -451,6 +446,7 @@
           <div class="step-desc">Desarrollo iterativo con revisiones frecuentes. Te mostramos avances reales y podés dar feedback en cada etapa del proceso.</div>
         </div>
       </div>
+
       <div class="process-step reveal reveal-delay-3">
         <div class="step-num">04</div>
         <div class="step-content">
@@ -462,13 +458,11 @@
 
     <div class="process-cta reveal">
       <p class="process-cta-text">La mayoría de nuestros proyectos arranca con una llamada de 30 minutos. Sin costo, sin compromiso.</p>
-      <a href="#contacto" class="btn-primary" onclick="window.ITANALYTICS.trackConversion('process-cta')">Empezar con una consulta gratuita</a>
+      <a href="#contacto" class="btn-primary">Empezar con una consulta gratuita</a>
     </div>
   </section>
 
-  <!-- ===========================
-       PORTFOLIO
-  =========================== -->
+  <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="section-header reveal">
       <div class="section-tag">Proyectos reales</div>
@@ -480,12 +474,10 @@
       <div class="portfolio-card reveal reveal-delay-1">
         <div class="portfolio-thumb portfolio-thumb--disney">
           <div class="portfolio-visual portfolio-visual--brand">
-            <img src="asset/img/logo-con-magui.png"
-                 alt="Con Magui a Disney"
-                 class="brand-logo-img" />
+            <img src="asset/img/logo-con-magui.png" alt="Con Magui a Disney" class="brand-logo-img" />
           </div>
           <div class="portfolio-overlay">
-            <a href="https://www.conmaguiadisney.com/" target="_blank" rel="noopener" class="portfolio-link" onclick="window.ITANALYTICS.trackConversion('portfolio-disney-click')">
+            <a href="https://www.conmaguiadisney.com/" target="_blank" rel="noopener" class="portfolio-link">
               Ver sitio en vivo →
             </a>
           </div>
@@ -520,7 +512,7 @@
             <span class="portfolio-visual-label portfolio-visual-label--gold">Centro de Estética</span>
           </div>
           <div class="portfolio-overlay">
-            <a href="#contacto" class="portfolio-link" onclick="window.ITANALYTICS.trackConversion('portfolio-estetica-click')">
+            <a href="#contacto" class="portfolio-link">
               Proyecto similar →
             </a>
           </div>
@@ -554,7 +546,7 @@
             <span class="portfolio-visual-label portfolio-visual-label--terracotta">ArtEmma · Cerámica</span>
           </div>
           <div class="portfolio-overlay">
-            <a href="#contacto" class="portfolio-link" onclick="window.ITANALYTICS.trackConversion('portfolio-artemma-click')">
+            <a href="#contacto" class="portfolio-link">
               Proyecto similar →
             </a>
           </div>
@@ -573,19 +565,7 @@
     </div>
   </section>
 
-  <!-- ===========================
-       PARTNERS
-  =========================== -->
-  <!-- ===========================
-       PARTNERS / CLIENTES
-       ─────────────────────────
-       Para agregar un nuevo partner:
-       1. Copiar el bloque <div class="partner-item"> de ejemplo abajo
-       2. Reemplazar src con la ruta al logo: asset/img/partners/nombre-logo.png
-       3. Reemplazar el href con la URL real del cliente
-       4. Reemplazar el alt y el <span> con el nombre del cliente
-       5. Si no hay logo disponible, usar el bloque con SVG genérico como fallback
-  =========================== -->
+  <!-- PARTNERS / CLIENTES -->
   <section id="partners">
     <div class="section-header reveal">
       <div class="section-tag">Proyectos reales</div>
@@ -594,8 +574,6 @@
     </div>
 
     <div class="partners-grid reveal">
-
-      <!-- PARTNER: Con Magui a Disney -->
       <div class="partner-item">
         <a href="https://www.conmaguiadisney.com/" target="_blank" rel="noopener" title="Con Magui a Disney">
           <img src="asset/img/partners/logo-con-magui.png" alt="Con Magui a Disney" class="partner-logo" />
@@ -603,45 +581,32 @@
         <span>Con Magui a Disney</span>
       </div>
 
-      <!-- PARTNER: Rico Distribución -->
       <div class="partner-item">
         <img src="asset/img/partners/logo-rico.png" alt="Rico Distribución" class="partner-logo" />
         <span>Rico Distribución</span>
       </div>
 
-      <!-- PARTNER: Moe Trip -->
       <div class="partner-item">
         <img src="asset/img/partners/logo-moe.png" alt="Moe Trip" class="partner-logo" />
         <span>Moe Trip</span>
       </div>
 
-      <!-- ── AGREGAR NUEVOS PARTNERS AQUÍ ──────────────────────────────────
-      <div class="partner-item">
-        <a href="URL_DEL_CLIENTE" target="_blank" rel="noopener" title="NOMBRE_CLIENTE">
-          <img src="asset/img/partners/NOMBRE-LOGO.png" alt="NOMBRE_CLIENTE" class="partner-logo" />
-        </a>
-        <span>NOMBRE_CLIENTE</span>
-      </div>
-      ─────────────────────────────────────────────────────────────────────── -->
-
-      <!-- Slot CTA — mantener siempre al final -->
       <div class="partner-item partner-item--cta">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="3 2"/><text x="16" y="20" text-anchor="middle" font-size="12" fill="#00d4ff">+</text></svg>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="12" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+          <text x="16" y="20" text-anchor="middle" font-size="12" fill="#00d4ff">+</text>
+        </svg>
         <span>Tu empresa aquí</span>
       </div>
-
     </div>
   </section>
 
-  <!-- ===========================
-       TECH STACK
-  =========================== -->
+  <!-- TECH STACK -->
   <section id="stack">
     <div class="stack-inner reveal">
       <span class="stack-label">Tecnologías que dominamos</span>
       <div class="stack-logos">
 
-        <!-- Python -->
         <div class="stack-item">
           <div class="stack-item-icon">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -653,14 +618,13 @@
           <div class="stack-item-name">Python</div>
         </div>
 
-        <!-- Node.js -->
         <div class="stack-item">
           <div class="stack-item-icon">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.05)" stroke-linejoin="round"/>
-              <line x1="20" y1="4"  x2="20" y2="36" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
-              <line x1="6"  y1="12" x2="34" y2="12" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
-              <line x1="6"  y1="28" x2="34" y2="28" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+              <line x1="20" y1="4" x2="20" y2="36" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+              <line x1="6" y1="12" x2="34" y2="12" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+              <line x1="6" y1="28" x2="34" y2="28" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
               <circle cx="20" cy="20" r="4" fill="#1a73e8" stroke="#00d4ff" stroke-width="1"/>
               <circle cx="20" cy="20" r="1.5" fill="#00d4ff"/>
             </svg>
@@ -668,7 +632,6 @@
           <div class="stack-item-name">Node.js</div>
         </div>
 
-        <!-- React -->
         <div class="stack-item">
           <div class="stack-item-icon">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -681,7 +644,6 @@
           <div class="stack-item-name">React</div>
         </div>
 
-        <!-- React Native -->
         <div class="stack-item">
           <div class="stack-item-icon">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -697,7 +659,6 @@
           <div class="stack-item-name">React Native</div>
         </div>
 
-        <!-- JavaScript -->
         <div class="stack-item">
           <div class="stack-item-icon">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -711,12 +672,11 @@
           <div class="stack-item-name">JavaScript</div>
         </div>
 
-        <!-- PostgreSQL -->
         <div class="stack-item">
           <div class="stack-item-icon">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <ellipse cx="20" cy="10" rx="12" ry="4" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.08)"/>
-              <line x1="8"  y1="10" x2="8"  y2="30" stroke="#00d4ff" stroke-width="1.5"/>
+              <line x1="8" y1="10" x2="8" y2="30" stroke="#00d4ff" stroke-width="1.5"/>
               <line x1="32" y1="10" x2="32" y2="30" stroke="#00d4ff" stroke-width="1.5"/>
               <ellipse cx="20" cy="30" rx="12" ry="4" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.05)"/>
               <ellipse cx="20" cy="18" rx="12" ry="4" stroke="rgba(0,212,255,0.4)" stroke-width="1" fill="none"/>
@@ -727,7 +687,6 @@
           <div class="stack-item-name">PostgreSQL</div>
         </div>
 
-        <!-- Cloud -->
         <div class="stack-item">
           <div class="stack-item-icon">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -743,19 +702,18 @@
           <div class="stack-item-name">Cloud</div>
         </div>
 
-        <!-- REST APIs -->
         <div class="stack-item">
           <div class="stack-item-icon">
             <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="4"  y="14" width="12" height="8" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
+              <rect x="4" y="14" width="12" height="8" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
               <rect x="24" y="14" width="12" height="8" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
               <line x1="16" y1="18" x2="24" y2="18" stroke="#1a73e8" stroke-width="1.5"/>
               <polyline points="21,15 24,18 21,21" stroke="#1a73e8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               <line x1="10" y1="22" x2="10" y2="28" stroke="rgba(0,212,255,0.5)" stroke-width="1" stroke-linecap="round"/>
               <line x1="30" y1="22" x2="30" y2="28" stroke="rgba(0,212,255,0.5)" stroke-width="1" stroke-linecap="round"/>
-              <rect x="6"  y="28" width="8" height="6" rx="1" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+              <rect x="6" y="28" width="8" height="6" rx="1" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
               <rect x="26" y="28" width="8" height="6" rx="1" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
-              <line x1="8"  y1="31" x2="12" y2="31" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-linecap="round"/>
+              <line x1="8" y1="31" x2="12" y2="31" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-linecap="round"/>
               <line x1="28" y1="31" x2="32" y2="31" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-linecap="round"/>
             </svg>
           </div>
@@ -766,9 +724,7 @@
     </div>
   </section>
 
-  <!-- ===========================
-       INDUSTRIES
-  =========================== -->
+  <!-- INDUSTRIES -->
   <section id="industrias">
     <div class="section-header reveal">
       <div class="section-tag">Industrias</div>
@@ -786,6 +742,7 @@
         <div class="industry-name">Turismo y Viajes</div>
         <div class="industry-desc">Plataformas de booking, gestión de paquetes, reservas online y comunicación automatizada con clientes.</div>
       </div>
+
       <div class="industry-card reveal reveal-delay-2">
         <svg class="industry-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="18" y="6" width="8" height="32" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
@@ -797,6 +754,7 @@
         <div class="industry-name">Salud y Estética</div>
         <div class="industry-desc">Sistemas de turnos, historiales de clientes, facturación y reportes para clínicas y centros de salud.</div>
       </div>
+
       <div class="industry-card reveal reveal-delay-3">
         <svg class="industry-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M4 8 L10 8 L16 28 L36 28" stroke="#00d4ff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -809,6 +767,7 @@
         <div class="industry-name">E-commerce y Retail</div>
         <div class="industry-desc">Tiendas online, catálogos digitales, integración con medios de pago y gestión de stock.</div>
       </div>
+
       <div class="industry-card reveal reveal-delay-1">
         <svg class="industry-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="6" y="16" width="32" height="22" rx="2" stroke="#00d4ff" stroke-width="1.5"/>
@@ -821,6 +780,7 @@
         <div class="industry-name">Servicios Profesionales</div>
         <div class="industry-desc">CRMs, portales para clientes, automatización de propuestas y seguimiento de proyectos.</div>
       </div>
+
       <div class="industry-card reveal reveal-delay-2">
         <svg class="industry-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="4" y="22" width="36" height="16" rx="1" stroke="#00d4ff" stroke-width="1.5"/>
@@ -834,6 +794,7 @@
         <div class="industry-name">Industria y Logística</div>
         <div class="industry-desc">Seguimiento de operaciones, control de inventario, reportes automáticos y dashboards en tiempo real.</div>
       </div>
+
       <div class="industry-card reveal reveal-delay-3">
         <svg class="industry-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M22 6 Q30 6 34 14 L34 28 L22 38 L10 28 L10 14 Q14 6 22 6 Z" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.05)"/>
@@ -850,9 +811,7 @@
     </div>
   </section>
 
-  <!-- ===========================
-       FAQ
-  =========================== -->
+  <!-- FAQ -->
   <section id="faq">
     <div class="section-header reveal">
       <div class="section-tag">Preguntas frecuentes</div>
@@ -870,6 +829,7 @@
           <p>Depende del alcance y la complejidad. No manejamos precios fijos porque cada proyecto es diferente. Lo que sí hacemos siempre es una evaluación inicial gratuita donde te damos un rango de costo antes de que te comprometas con nada. Podemos adaptarnos a distintos presupuestos y escalar el alcance según lo que necesitás.</p>
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-question">
           ¿Cuánto tiempo tarda el desarrollo?
@@ -879,6 +839,7 @@
           <p>Un sitio web profesional puede estar listo en 2 a 4 semanas. Un sistema de gestión o una app a medida puede llevar entre 4 y 16 semanas según el alcance. Siempre acordamos tiempos claros antes de empezar y los cumplimos. Si hay cambios durante el proyecto, los comunicamos con anticipación.</p>
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-question">
           ¿Qué pasa después del lanzamiento?
@@ -888,6 +849,7 @@
           <p>No desaparecemos después de entregar. Ofrecemos soporte, mantenimiento y evolución del sistema según tus necesidades. La mayoría de nuestros clientes siguen trabajando con nosotros después del primer proyecto — ya sea para nuevas funciones, integraciones o soporte técnico.</p>
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-question">
           ¿Trabajan con clientes fuera de Argentina?
@@ -897,6 +859,7 @@
           <p>Sí, trabajamos de forma 100% remota con clientes de cualquier país. Nos comunicamos por videollamada, usamos herramientas colaborativas en la nube y entregamos todo documentado. Tener base en Argentina nos permite ofrecer calidad de ingeniería a tarifas muy competitivas para clientes de Europa, EEUU y LATAM.</p>
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-question">
           ¿Cómo empezamos un proyecto?
@@ -906,6 +869,7 @@
           <p>Con una consulta sin costo. Completás el formulario o nos escribís por WhatsApp contándonos de tu proyecto. Agendamos una llamada de 30 minutos, entendemos lo que necesitás y te enviamos una propuesta con alcance, tiempos y costo. Sin presión y sin compromiso hasta que vos lo decidás.</p>
         </div>
       </div>
+
       <div class="faq-item">
         <button class="faq-question">
           ¿El código y el sistema son míos?
@@ -918,9 +882,7 @@
     </div>
   </section>
 
-  <!-- ===========================
-       CONTACT
-  =========================== -->
+  <!-- CONTACT -->
   <section id="contacto">
     <div class="section-header reveal">
       <div class="section-tag">Hablemos</div>
@@ -943,6 +905,7 @@
               <div class="contact-item-sub">Trabajamos con clientes de cualquier país</div>
             </div>
           </div>
+
           <div class="contact-item">
             <div class="contact-item-icon">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4C2 3.4 2.4 3 3 3H13C13.6 3 14 3.4 14 4V12C14 12.6 13.6 13 13 13H3C2.4 13 2 12.6 2 12V4ZM3 4V5L8 8.5L13 5V4L8 7.5L3 4Z" fill="#00d4ff"/></svg>
@@ -960,26 +923,28 @@
           <div class="form-row">
             <div class="form-group">
               <label for="formNombre">Nombre</label>
-              <input type="text" placeholder="Tu nombre" id="formNombre" />
+              <input type="text" placeholder="Tu nombre" id="formNombre" name="nombre" />
             </div>
             <div class="form-group">
               <label for="formEmail">Email</label>
-              <input type="email" placeholder="tu@email.com" id="formEmail" />
+              <input type="email" placeholder="tu@email.com" id="formEmail" name="email" />
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group">
               <label for="formTelefono">Teléfono</label>
-              <input type="tel" placeholder="+54 9 11 0000-0000" id="formTelefono" />
+              <input type="tel" placeholder="+54 9 11 0000-0000" id="formTelefono" name="telefono" />
             </div>
             <div class="form-group">
               <label for="formEmpresa">Empresa / Proyecto</label>
-              <input type="text" placeholder="Nombre de tu empresa o proyecto" id="formEmpresa" />
+              <input type="text" placeholder="Nombre de tu empresa o proyecto" id="formEmpresa" name="empresa" />
             </div>
           </div>
+
           <div class="form-group">
             <label for="formTipo">Tipo de proyecto</label>
-            <select id="formTipo">
+            <select id="formTipo" name="tipo_proyecto">
               <option value="">Seleccioná una opción</option>
               <option>Página web</option>
               <option>App móvil</option>
@@ -990,10 +955,12 @@
               <option>Otro</option>
             </select>
           </div>
+
           <div class="form-group">
             <label for="formMensaje">Contanos tu idea</label>
-            <textarea placeholder="Describí brevemente qué necesitás y cuál es el problema que querés resolver..." id="formMensaje"></textarea>
+            <textarea placeholder="Describí brevemente qué necesitás y cuál es el problema que querés resolver..." id="formMensaje" name="mensaje"></textarea>
           </div>
+
           <button type="submit" class="form-submit"><span>Enviar — te respondemos en 24hs</span></button>
         </form>
       </div>
@@ -1005,7 +972,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#inicio" class="nav-logo footer-logo">
-          <img src="asset/img/logo-horizontal-transparent-it.png" alt="IT-Integral Solutions" style="height:36px;width:auto;" />
+          <img src="asset/img/logo-horizontal-transparent-it.png" alt="IT-Integral Solutions" class="site-logo site-logo--footer" />
         </a>
         <p>Desarrollamos software, aplicaciones y plataformas digitales que automatizan la operación de empresas que quieren crecer.</p>
       </div>
@@ -1048,13 +1015,10 @@
         Desarrollado en Argentina · Clientes en todo el mundo
       </div>
       <div class="social-links">
-        <!-- LinkedIn: agregar cuando el perfil de empresa esté creado
-        <a href="https://linkedin.com/company/URL-REAL" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
-          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
-        </a>
-        -->
         <a href="mailto:it.integral.solution@gmail.com" class="social-link" title="Email">
-          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739z"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -1065,7 +1029,6 @@
      target="_blank"
      rel="noopener"
      class="wa-float"
-     onclick="window.ITANALYTICS && window.ITANALYTICS.trackConversion('whatsapp-float-click')"
      aria-label="Contactar por WhatsApp">
     <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.668 4.61 1.828 6.5L4 29l7.703-1.797A11.94 11.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3z" fill="white" fill-opacity="0.2" stroke="white" stroke-width="1.5"/>
@@ -1077,6 +1040,5 @@
   <!-- Scripts -->
   <script src="js/analytics.js"></script>
   <script src="js/main.js"></script>
-
 </body>
 </html>

@@ -1912,3 +1912,17 @@ footer {
   color: rgba(255, 210, 70, 0.6);
   text-transform: uppercase;
 }
+
+
+.site-logo {
+  width: auto;
+  display: block;
+}
+
+.site-logo--nav {
+  height: 38px;
+}
+
+.site-logo--footer {
+  height: 36px;
+}
