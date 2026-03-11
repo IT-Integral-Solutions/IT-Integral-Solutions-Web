@@ -9,14 +9,14 @@
   <meta name="description" content="Desarrollamos software a medida, aplicaciones y plataformas digitales para empresas que necesitan automatizar procesos y escalar su operación. Base en Argentina, clientes en todo el mundo. Consultá sin costo." />
   <meta name="author" content="IT-Integral Solutions" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://it-integral-solutions.com/" />
+  <link rel="canonical" href="https://www.itintegraltech.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://it-integral-solutions.com/" />
+  <meta property="og:url" content="https://www.itintegraltech.com/" />
   <meta property="og:title" content="Desarrollo de Software a Medida para Empresas | IT-Integral Solutions" />
   <meta property="og:description" content="Software, aplicaciones y plataformas digitales que automatizan tu operación y hacen crecer tu negocio. Consultá sin costo." />
-  <meta property="og:image" content="https://it-integral-solutions.com/og-image.jpg" />
+  <meta property="og:image" content="https://www.itintegraltech.com/og-image.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -29,8 +29,8 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "IT-Integral Solutions",
-    "url": "https://it-integral-solutions.com",
-    "logo": "https://it-integral-solutions.com/logo.png",
+    "url": "https://www.itintegraltech.com",
+    "logo": "https://www.itintegraltech.com/asset/img/logo-horizontal-transparent-it.png",
     "description": "Desarrollo de software a medida, aplicaciones móviles y plataformas digitales para empresas.",
     "areaServed": "Worldwide",
     "availableLanguage": ["Spanish", "English"],
@@ -40,9 +40,12 @@
       "email": "it.integral.solution@gmail.com",
       "availableLanguage": ["Spanish", "English"]
     },
-    "sameAs": ["https://it-integral-solutions.com"]
+    "sameAs": ["https://www.itintegraltech.com"]
   }
   </script>
+
+  <!-- Google Analytics 4 — reemplazar GA_MEASUREMENT_ID con el ID real -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,30 +72,7 @@
   <!-- NAVBAR -->
   <nav id="navbar">
     <a href="#inicio" class="nav-logo">
-      <div class="nav-logo-icon">
-        <svg class="logo-svg" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="21" cy="21" r="19" stroke="#1a73e8" stroke-width="1.5"/>
-          <circle cx="21" cy="21" r="14" stroke="rgba(0,212,255,0.3)" stroke-width="0.5" stroke-dasharray="3 2"/>
-          <circle cx="21" cy="21" r="7" fill="#1a73e8"/>
-          <line x1="21" y1="14" x2="21" y2="4" stroke="#00d4ff" stroke-width="1.2"/>
-          <line x1="21" y1="28" x2="21" y2="38" stroke="#00d4ff" stroke-width="1.2"/>
-          <line x1="14" y1="21" x2="4" y2="21" stroke="#00d4ff" stroke-width="1.2"/>
-          <line x1="28" y1="21" x2="38" y2="21" stroke="#00d4ff" stroke-width="1.2"/>
-          <circle cx="21" cy="4" r="2" fill="#00d4ff"/>
-          <circle cx="21" cy="38" r="2" fill="#00d4ff"/>
-          <circle cx="4" cy="21" r="2" fill="#00d4ff"/>
-          <circle cx="38" cy="21" r="2" fill="#00d4ff"/>
-          <circle cx="8" cy="8" r="1.5" fill="rgba(0,212,255,0.5)"/>
-          <circle cx="34" cy="8" r="1.5" fill="rgba(0,212,255,0.5)"/>
-          <circle cx="8" cy="34" r="1.5" fill="rgba(0,212,255,0.5)"/>
-          <circle cx="34" cy="34" r="1.5" fill="rgba(0,212,255,0.5)"/>
-          <text x="21" y="24.5" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="8" fill="white">iT</text>
-        </svg>
-      </div>
-      <div class="nav-logo-text">
-        IT-Integral
-        <span>Solutions</span>
-      </div>
+      <img src="asset/img/logo-horizontal-transparent-it.png" alt="IT-Integral Solutions" style="height:38px;width:auto;" />
     </a>
 
     <ul class="nav-links">
@@ -596,6 +576,16 @@
   <!-- ===========================
        PARTNERS
   =========================== -->
+  <!-- ===========================
+       PARTNERS / CLIENTES
+       ─────────────────────────
+       Para agregar un nuevo partner:
+       1. Copiar el bloque <div class="partner-item"> de ejemplo abajo
+       2. Reemplazar src con la ruta al logo: asset/img/partners/nombre-logo.png
+       3. Reemplazar el href con la URL real del cliente
+       4. Reemplazar el alt y el <span> con el nombre del cliente
+       5. Si no hay logo disponible, usar el bloque con SVG genérico como fallback
+  =========================== -->
   <section id="partners">
     <div class="section-header reveal">
       <div class="section-tag">Proyectos reales</div>
@@ -604,22 +594,42 @@
     </div>
 
     <div class="partners-grid reveal">
+
+      <!-- PARTNER: Con Magui a Disney -->
       <div class="partner-item">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#00d4ff" stroke-width="1"/><path d="M8 20 Q12 10 16 14 Q20 18 24 10" stroke="#1a73e8" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        <a href="https://www.conmaguiadisney.com/" target="_blank" rel="noopener" title="Con Magui a Disney">
+          <img src="asset/img/partners/logo-con-magui.png" alt="Con Magui a Disney" class="partner-logo" />
+        </a>
         <span>Con Magui a Disney</span>
       </div>
+
+      <!-- PARTNER: Centro de Estética -->
       <div class="partner-item">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="18" rx="3" stroke="#00d4ff" stroke-width="1"/><path d="M10 14 H22 M10 18 H18" stroke="#1a73e8" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <img src="asset/img/partners/logo-centro-estetica.png" alt="Centro de Estética" class="partner-logo" />
         <span>Centro de Estética</span>
       </div>
+
+      <!-- PARTNER: ArtEmma Cerámica -->
       <div class="partner-item">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" stroke="#00d4ff" stroke-width="1"/><path d="M6 26 Q6 20 16 20 Q26 20 26 26" stroke="#1a73e8" stroke-width="1.5" fill="none"/></svg>
+        <img src="asset/img/partners/logo-artemma.png" alt="ArtEmma Cerámica" class="partner-logo" />
         <span>ArtEmma Cerámica</span>
       </div>
+
+      <!-- ── AGREGAR NUEVOS PARTNERS AQUÍ ──────────────────────────────────
+      <div class="partner-item">
+        <a href="URL_DEL_CLIENTE" target="_blank" rel="noopener" title="NOMBRE_CLIENTE">
+          <img src="asset/img/partners/NOMBRE-LOGO.png" alt="NOMBRE_CLIENTE" class="partner-logo" />
+        </a>
+        <span>NOMBRE_CLIENTE</span>
+      </div>
+      ─────────────────────────────────────────────────────────────────────── -->
+
+      <!-- Slot CTA — mantener siempre al final -->
       <div class="partner-item partner-item--cta">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="rgba(0,212,255,0.4)" stroke-width="1" stroke-dasharray="3 2"/><text x="16" y="20" text-anchor="middle" font-size="12" fill="#00d4ff">+</text></svg>
         <span>Tu empresa aquí</span>
       </div>
+
     </div>
   </section>
 
@@ -938,7 +948,7 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4C2 3.4 2.4 3 3 3H13C13.6 3 14 3.4 14 4V12C14 12.6 13.6 13 13 13H3C2.4 13 2 12.6 2 12V4ZM3 4V5L8 8.5L13 5V4L8 7.5L3 4Z" fill="#00d4ff"/></svg>
             </div>
             <div>
-              <div class="contact-item-text"><a href="/cdn-cgi/l/email-protection#5a332e7433342e3f3d283b36742935362f2e3335341a3d373b333674393537" class="contact-email-link"><span class="__cf_email__" data-cfemail="2148550f484f55444653404d0f524e4d5455484e4f61464c40484d0f424e4c">[email&#160;protected]</span></a></div>
+              <div class="contact-item-text"><a href="mailto:it.integral.solution@gmail.com" class="contact-email-link">it.integral.solution@gmail.com</a></div>
               <div class="contact-item-sub">Respuesta en menos de 24hs</div>
             </div>
           </div>
@@ -995,22 +1005,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#inicio" class="nav-logo footer-logo">
-          <div class="nav-logo-icon">
-            <svg class="logo-svg" viewBox="0 0 42 42" fill="none">
-              <circle cx="21" cy="21" r="19" stroke="#1a73e8" stroke-width="1.5"/>
-              <circle cx="21" cy="21" r="7" fill="#1a73e8"/>
-              <line x1="21" y1="14" x2="21" y2="4" stroke="#00d4ff" stroke-width="1.2"/>
-              <line x1="21" y1="28" x2="21" y2="38" stroke="#00d4ff" stroke-width="1.2"/>
-              <line x1="14" y1="21" x2="4" y2="21" stroke="#00d4ff" stroke-width="1.2"/>
-              <line x1="28" y1="21" x2="38" y2="21" stroke="#00d4ff" stroke-width="1.2"/>
-              <circle cx="21" cy="4" r="2" fill="#00d4ff"/>
-              <circle cx="21" cy="38" r="2" fill="#00d4ff"/>
-              <circle cx="4" cy="21" r="2" fill="#00d4ff"/>
-              <circle cx="38" cy="21" r="2" fill="#00d4ff"/>
-              <text x="21" y="24.5" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="8" fill="white">iT</text>
-            </svg>
-          </div>
-          <div class="nav-logo-text">IT-Integral<span>Solutions</span></div>
+          <img src="asset/img/logo-horizontal-transparent-it.png" alt="IT-Integral Solutions" style="height:36px;width:auto;" />
         </a>
         <p>Desarrollamos software, aplicaciones y plataformas digitales que automatizan la operación de empresas que quieren crecer.</p>
       </div>
@@ -1058,7 +1053,7 @@
           <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
         </a>
         -->
-        <a href="/cdn-cgi/l/email-protection#fd9489d3949389989a8f9c91d38e92918889949293bd9a909c9491d39e9290" class="social-link" title="Email">
+        <a href="mailto:it.integral.solution@gmail.com" class="social-link" title="Email">
           <svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739z"/></svg>
         </a>
       </div>

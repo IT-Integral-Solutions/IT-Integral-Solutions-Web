@@ -1,178 +1,225 @@
-// ——— CURSOR ———
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
+/* =============================================================================
+   MAIN — UI interactions + analytics event listeners
+   Toda la lógica de interfaz del sitio en un lugar.
+   Secciones:
+     1. Custom cursor
+     2. Particles hero
+     3. Navbar scroll + mobile menu
+     4. Reveal on scroll (IntersectionObserver)
+     5. Counters animados
+     6. FAQ accordion
+     7. Footer year
+     8. Analytics event listeners
+   ============================================================================= */
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX;
-  my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-});
+(function () {
+  'use strict';
 
-function animRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px';
-  ring.style.top = ry + 'px';
-  requestAnimationFrame(animRing);
-}
-animRing();
 
-document.querySelectorAll('a, button, .service-card, .portfolio-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    ring.style.width = '60px';
-    ring.style.height = '60px';
-    ring.style.borderColor = 'rgba(0,212,255,0.6)';
-  });
-  el.addEventListener('mouseleave', () => {
-    ring.style.width = '36px';
-    ring.style.height = '36px';
-    ring.style.borderColor = 'rgba(0,212,255,0.5)';
-  });
-});
+  // ─── 1. CUSTOM CURSOR ────────────────────────────────────────────────────────
 
-// ——— NAVBAR SCROLL ———
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
+  var cursor     = document.getElementById('cursor');
+  var cursorRing = document.getElementById('cursorRing');
 
-// ——— MOBILE MENU ———
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.add('open');
-  window.ITANALYTICS.trackConversion('mobile-menu-open');
-});
+  if (cursor && cursorRing) {
+    var cx = 0, cy = 0, rx = 0, ry = 0;
 
-document.getElementById('menuClose').addEventListener('click', closeMobile);
-
-function closeMobile() {
-  document.getElementById('mobileMenu').classList.remove('open');
-}
-
-// ——— PARTICLES ———
-const container = document.getElementById('particles');
-for (let i = 0; i < 30; i++) {
-  const p = document.createElement('div');
-  p.className = 'particle';
-  p.style.cssText = `left:${Math.random() * 100}%;animation-duration:${6 + Math.random() * 10}s;animation-delay:${Math.random() * 10}s;opacity:${0.2 + Math.random() * 0.4}`;
-  container.appendChild(p);
-}
-
-// ——— SCROLL REVEAL ———
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      const section = e.target.closest('section');
-      if (section && section.id) window.ITANALYTICS.trackSection(section.id);
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal, .process-step').forEach(el => observer.observe(el));
-
-// ——— COUNTER ANIMATION ———
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const el = e.target;
-      const target = parseInt(el.dataset.count);
-      let start = 0;
-      const step = target / 60;
-      const timer = setInterval(() => {
-        start += step;
-        if (start >= target) {
-          el.textContent = target + (target === 100 ? '' : '+');
-          clearInterval(timer);
-        } else {
-          el.textContent = Math.floor(start) + (target === 24 ? '/7' : '+');
-        }
-      }, 25);
-      counterObserver.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
-
-// ——— FORM SUBMIT ———
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
-  e.preventDefault();
-
-  const nombre   = document.getElementById('formNombre').value.trim();
-  const email    = document.getElementById('formEmail').value.trim();
-  const telefono = document.getElementById('formTelefono').value.trim();
-  const empresa  = document.getElementById('formEmpresa').value.trim();
-  const tipo     = document.getElementById('formTipo').value;
-  const mensaje  = document.getElementById('formMensaje').value.trim();
-
-  if (!nombre || !email) {
-    alert('Por favor completá nombre y email.');
-    return;
-  }
-
-  const btn = document.querySelector('.form-submit');
-  btn.disabled = true;
-  btn.querySelector('span').textContent = 'Enviando...';
-
-  try {
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: '0fb83ab4-60ca-49a0-b016-2e1b684c8a23',
-        subject: `Nueva consulta de ${nombre} — IT-Integral Solutions`,
-        from_name: nombre,
-        reply_to: email,
-        name: nombre,
-        email: email,
-        telefono: telefono || '—',
-        empresa: empresa || '—',
-        tipo_proyecto: tipo || '—',
-        mensaje: mensaje || '—'
-      })
+    document.addEventListener('mousemove', function (e) {
+      cx = e.clientX;
+      cy = e.clientY;
+      cursor.style.transform = 'translate(' + (cx - 4) + 'px, ' + (cy - 4) + 'px)';
     });
 
-    const data = await res.json();
+    (function animateRing() {
+      rx += (cx - rx) * 0.12;
+      ry += (cy - ry) * 0.12;
+      cursorRing.style.transform = 'translate(' + (rx - 16) + 'px, ' + (ry - 16) + 'px)';
+      requestAnimationFrame(animateRing);
+    })();
 
-    if (data.success) {
-      window.ITANALYTICS.trackConversion('form-submit');
-      window.ITANALYTICS.trackConversion('lead-' + (tipo || 'general'));
-      btn.querySelector('span').textContent = '¡Consulta enviada! ✓';
-      btn.style.background = 'linear-gradient(135deg, #0a7a3e, #0fa854)';
-      document.getElementById('contactForm').reset();
-    } else {
-      throw new Error(data.message || 'Error desconocido');
-    }
-  } catch (err) {
-    console.error('[Form] Error:', err);
-    btn.querySelector('span').textContent = 'Error al enviar. Intentá de nuevo.';
-    btn.disabled = false;
-    setTimeout(() => {
-      btn.querySelector('span').textContent = 'Enviar Consulta →';
-      btn.style.background = '';
-    }, 4000);
+    document.querySelectorAll('a, button, .service-card, .portfolio-card, .faq-question').forEach(function (el) {
+      el.addEventListener('mouseenter', function () {
+        cursor.classList.add('cursor--hover');
+        cursorRing.classList.add('cursor-ring--hover');
+      });
+      el.addEventListener('mouseleave', function () {
+        cursor.classList.remove('cursor--hover');
+        cursorRing.classList.remove('cursor-ring--hover');
+      });
+    });
   }
-});
 
-// ——— ANALYTICS: Track outbound links ———
-document.querySelectorAll('a[href^="http"]').forEach(link => {
-  link.addEventListener('click', () => {
-    window.ITANALYTICS.trackConversion('outbound-' + link.href);
+
+  // ─── 2. PARTICLES HERO ───────────────────────────────────────────────────────
+
+  var particlesContainer = document.getElementById('particles');
+
+  if (particlesContainer) {
+    if (!document.getElementById('particle-style')) {
+      var style = document.createElement('style');
+      style.id  = 'particle-style';
+      style.textContent = '@keyframes particleFloat { 0% { transform: translate(0,0) scale(1); opacity:0.2; } 100% { transform: translate(0,-20px) scale(1.4); opacity:0.7; } }';
+      document.head.appendChild(style);
+    }
+
+    for (var i = 0; i < 55; i++) {
+      (function () {
+        var p        = document.createElement('div');
+        var size     = Math.random() * 3 + 1;
+        var duration = Math.random() * 15 + 8;
+        var delay    = Math.random() * 8;
+        var opacity  = Math.random() * 0.5 + 0.1;
+        p.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;'
+          + 'left:' + (Math.random()*100) + '%;top:' + (Math.random()*100) + '%;'
+          + 'background:rgba(0,212,255,' + opacity + ');border-radius:50%;pointer-events:none;'
+          + 'animation:particleFloat ' + duration + 's ' + delay + 's infinite ease-in-out alternate;';
+        particlesContainer.appendChild(p);
+      })();
+    }
+  }
+
+
+  // ─── 3. NAVBAR ───────────────────────────────────────────────────────────────
+
+  var navbar     = document.getElementById('navbar');
+  var hamburger  = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuClose  = document.getElementById('menuClose');
+
+  if (navbar) {
+    window.addEventListener('scroll', function () {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  }
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function () {
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  window.closeMobile = function () {
+    if (mobileMenu) mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  if (menuClose) menuClose.addEventListener('click', window.closeMobile);
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(function (l) {
+      l.addEventListener('click', window.closeMobile);
+    });
+  }
+
+
+  // ─── 4. REVEAL ON SCROLL ─────────────────────────────────────────────────────
+
+  var revealEls = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { revealObs.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+
+  // ─── 5. COUNTERS ANIMADOS ────────────────────────────────────────────────────
+
+  var counters = document.querySelectorAll('.stat-num[data-count]');
+
+  if (counters.length && 'IntersectionObserver' in window) {
+    var cntObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el      = entry.target;
+        var target  = parseInt(el.getAttribute('data-count'), 10);
+        var duration = 1800;
+        var startTime = null;
+
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target);
+          if (progress < 1) { requestAnimationFrame(step); }
+          else { el.textContent = target; }
+        }
+        requestAnimationFrame(step);
+        cntObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { cntObs.observe(el); });
+  }
+
+
+  // ─── 6. FAQ ACCORDION ────────────────────────────────────────────────────────
+
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item   = btn.closest('.faq-item');
+      var answer = item ? item.querySelector('.faq-answer') : null;
+      var isOpen = item && item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(function (o) {
+        o.classList.remove('open');
+        var a = o.querySelector('.faq-answer');
+        if (a) a.style.maxHeight = null;
+      });
+
+      if (!isOpen && item && answer) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
   });
-});
 
-// ——— FOOTER YEAR ———
-const footerYearEl = document.getElementById('footerYear');
-if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
 
-// ——— FAQ ACCORDION ———
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
+  // ─── 7. FOOTER YEAR ──────────────────────────────────────────────────────────
+
+  var yearEl = document.getElementById('footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+
+  // ─── 8. ANALYTICS EVENT LISTENERS ───────────────────────────────────────────
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.ITANALYTICS) return;
+
+    document.querySelectorAll('.btn-primary, .btn-outline, .nav-cta, .form-submit').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        window.ITANALYTICS.trackEvent('cta', 'cta_click', btn.textContent.trim());
+      });
+    });
+
+    var waBtn = document.querySelector('.wa-float');
+    if (waBtn) {
+      waBtn.addEventListener('click', function () {
+        window.ITANALYTICS.trackConversion('whatsapp-float-click');
+      });
+    }
+
+    var contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function () {
+        window.ITANALYTICS.trackConversion('form-submit');
+      });
+    }
+
+    document.querySelectorAll('.portfolio-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var card  = link.closest('.portfolio-card');
+        var title = card ? card.querySelector('.portfolio-title') : null;
+        window.ITANALYTICS.trackEvent('portfolio', 'portfolio_click', title ? title.textContent.trim() : link.href);
+      });
+    });
   });
-});
+
+})();

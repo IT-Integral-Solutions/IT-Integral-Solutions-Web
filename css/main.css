@@ -145,38 +145,17 @@ nav.scrolled {
   text-decoration: none;
 }
 
-.nav-logo-icon {
-  width: 42px;
-  height: 42px;
-  position: relative;
-}
-
-/* SVG Circuit Logo */
-.logo-svg circle,
-.logo-svg path,
-.logo-svg line {
-  transition: all 0.3s ease;
-}
-
-.nav-logo:hover .logo-svg .glow-ring {
-  filter: drop-shadow(0 0 8px var(--cyan));
-}
-
-.nav-logo-text {
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.05em;
-  line-height: 1.1;
-}
-
-.nav-logo-text span {
-  color: var(--cyan);
+.nav-logo img {
+  height: 52px;
+  width: auto;
+  max-width: 220px;
   display: block;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.nav-logo:hover img {
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px var(--cyan));
 }
 
 .nav-links {
@@ -847,6 +826,22 @@ section { position: relative; z-index: 1; }
 .partner-item:hover {
   color: var(--cyan);
   opacity: 1;
+}
+
+/* Logo de imagen para partners */
+.partner-logo {
+  height: 32px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.55;
+  filter: grayscale(1) brightness(1.4);
+  transition: opacity 0.3s, filter 0.3s;
+}
+
+.partner-item:hover .partner-logo {
+  opacity: 1;
+  filter: grayscale(0) brightness(1);
 }
 
 .partner-dot {
@@ -1776,6 +1771,19 @@ footer {
 
 .footer-logo {
   display: inline-flex;
+  margin-bottom: 1rem;
+}
+
+.footer-logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.footer-logo:hover img {
+  opacity: 1;
 }
 
 /* =============================================================================
